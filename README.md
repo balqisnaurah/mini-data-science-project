@@ -29,12 +29,15 @@ Visualisasi untuk memahami pola data:
 - Churn berdasarkan tipe kontrak (Month-to-month vs One year vs Two year)
 - Churn berdasarkan jenis internet service (DSL vs Fiber optic)
 - Distribusi tenure dan monthly charges berdasarkan status churn
+- Churn berdasarkan gender, senior citizen, dan metode pembayaran
+- Scatter plot tenure vs monthly charges dengan warna berdasarkan churn
 
 ### 3. Insight dari EDA
 - Kontrak bulanan memiliki tingkat churn paling tinggi
 - Pelanggan dengan tenure rendah (baru berlangganan) lebih cenderung churn
 - Monthly charges tinggi berkorelasi dengan tingkat churn yang lebih tinggi
 - Fiber optic memiliki tingkat churn lebih tinggi dibanding DSL
+- Senior citizen memiliki proporsi churn yang lebih tinggi
 
 ### 4. Persiapan Data untuk Model
 - Konversi tipe data (TotalCharges ke numerik)
@@ -67,6 +70,7 @@ Rekomendasi berbasis data untuk mengurangi churn rate.
 |------|-----------|
 | `eda_churn_overview.png` | Churn berdasarkan kontrak, internet service, dan distribusi keseluruhan |
 | `eda_tenure_charges.png` | Distribusi tenure dan monthly charges berdasarkan churn |
+| `eda_churn_detailed.png` | Churn berdasarkan gender, senior citizen, metode pembayaran, dan scatter plot |
 | `model_results.png` | Confusion matrix dan feature importance |
 
 ---
@@ -77,6 +81,7 @@ Rekomendasi berbasis data untuk mengurangi churn rate.
 2. Tawarkan insentif migrasi dari kontrak bulanan ke kontrak tahunan
 3. Review pricing strategy untuk pelanggan dengan monthly charges tinggi
 4. Fokuskan retensi pada segment fiber optic yang memiliki churn rate tinggi
+5. Perhatikan segment senior citizen yang memiliki proporsi churn lebih tinggi
 
 ---
 
@@ -88,6 +93,7 @@ mini-data-science-project/
 ├── telco_churn.csv                 # Dataset
 ├── eda_churn_overview.png          # Output visualisasi EDA
 ├── eda_tenure_charges.png          # Output visualisasi EDA
+├── eda_churn_detailed.png          # Output visualisasi EDA detail
 ├── model_results.png               # Output hasil model
 └── README.md
 ```
