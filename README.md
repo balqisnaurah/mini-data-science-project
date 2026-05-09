@@ -1,6 +1,6 @@
 # Mini Data Science Project - Customer Churn Analysis
 
-Proyek data science end-to-end yang menganalisis data pelanggan telekomunikasi untuk memahami faktor-faktor yang mempengaruhi churn dan membangun model prediksi menggunakan Random Forest.
+Proyek data science end-to-end yang menganalisis data pelanggan telekomunikasi untuk memahami faktor-faktor yang mempengaruhi churn, membangun dan membandingkan 3 model prediksi, serta memberikan rekomendasi bisnis.
 
 ---
 
@@ -8,7 +8,7 @@ Proyek data science end-to-end yang menganalisis data pelanggan telekomunikasi u
 
 1. Melakukan Exploratory Data Analysis (EDA) untuk memahami pola churn pelanggan
 2. Mengidentifikasi faktor-faktor utama yang mempengaruhi churn
-3. Membangun model klasifikasi untuk memprediksi pelanggan yang berisiko churn
+3. Membangun dan membandingkan 3 model klasifikasi (Logistic Regression, Decision Tree, Random Forest)
 4. Memberikan rekomendasi bisnis berdasarkan temuan analisis
 
 ---
@@ -45,10 +45,17 @@ Visualisasi untuk memahami pola data:
 - Encoding variabel kategorikal (Contract, InternetService)
 - Pemilihan fitur: tenure, MonthlyCharges, TotalCharges, Contract, InternetService
 
-### 5. Membangun Model Prediksi
+### 5. Membangun dan Membandingkan Model
 - Split data: 80% training, 20% testing
-- Algoritma: Random Forest Classifier (100 trees)
-- Evaluasi: accuracy, precision, recall, F1-score, confusion matrix
+- 3 algoritma yang dibandingkan:
+
+| Model | Deskripsi |
+|-------|-----------|
+| Logistic Regression | Model linear untuk klasifikasi biner |
+| Decision Tree | Model berbasis aturan keputusan |
+| Random Forest | Ensemble dari banyak decision tree |
+
+- Evaluasi: accuracy, F1-score, confusion matrix, feature importance
 
 ### 6. Kesimpulan dan Rekomendasi Bisnis
 Rekomendasi berbasis data untuk mengurangi churn rate.
@@ -57,10 +64,13 @@ Rekomendasi berbasis data untuk mengurangi churn rate.
 
 ## Hasil Model
 
-| Metrik | Nilai |
-|--------|-------|
-| Akurasi | ~79% |
-| Feature terpenting | tenure, MonthlyCharges, TotalCharges |
+| Model | Accuracy | F1-Score |
+|-------|----------|----------|
+| Logistic Regression | ~80% | ~56% |
+| Decision Tree | ~73% | ~49% |
+| Random Forest | ~79% | ~55% |
+
+Feature terpenting: tenure, MonthlyCharges, TotalCharges
 
 ---
 
@@ -72,6 +82,7 @@ Rekomendasi berbasis data untuk mengurangi churn rate.
 | `eda_tenure_charges.png` | Distribusi tenure dan monthly charges berdasarkan churn |
 | `eda_churn_detailed.png` | Churn berdasarkan gender, senior citizen, metode pembayaran, dan scatter plot |
 | `model_results.png` | Confusion matrix dan feature importance |
+| `model_comparison.png` | Perbandingan accuracy dan F1-score ketiga model |
 
 ---
 
@@ -94,7 +105,8 @@ mini-data-science-project/
 ├── eda_churn_overview.png          # Output visualisasi EDA
 ├── eda_tenure_charges.png          # Output visualisasi EDA
 ├── eda_churn_detailed.png          # Output visualisasi EDA detail
-├── model_results.png               # Output hasil model
+├── model_results.png               # Output hasil model (Random Forest)
+├── model_comparison.png            # Perbandingan 3 model
 └── README.md
 ```
 
@@ -108,11 +120,11 @@ mini-data-science-project/
 | pandas | Manipulasi dan analisis data |
 | matplotlib | Pembuatan visualisasi |
 | seaborn | Visualisasi statistik (heatmap, distribusi) |
-| scikit-learn | Machine learning (Random Forest, train/test split, evaluasi) |
+| scikit-learn | Machine learning (Logistic Regression, Decision Tree, Random Forest) |
 | Jupyter Notebook | Environment interaktif untuk analisis data |
 
 ---
 
 ## Tentang
 
-Proyek ini dibuat sebagai bagian dari proses belajar data science, mulai dari eksplorasi data hingga pembuatan model machine learning sederhana. Fokus utama adalah pada proses analisis dan penyajian insight yang dapat diterjemahkan menjadi rekomendasi bisnis.
+Proyek ini dibuat sebagai bagian dari proses belajar data science, mulai dari eksplorasi data hingga pembuatan dan perbandingan model machine learning. Fokus utama adalah pada proses analisis dan penyajian insight yang dapat diterjemahkan menjadi rekomendasi bisnis.
